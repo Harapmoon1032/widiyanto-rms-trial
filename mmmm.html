@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ensiklopedia Raden Mas Said</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(180, 140, 70, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(180, 140, 70, 0.6); }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-slide-left {
+      animation: slideInLeft 0.6s ease-out forwards;
+    }
+    
+    .animate-slide-right {
+      animation: slideInRight 0.6s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    .gold-shimmer {
+      background: linear-gradient(90deg, #562F00 0%, #FF9644 25%, #FFCE99 50%, #FF9644 75%, #562F00 100%);
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .batik-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9644' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .kawung-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 0C11.64 0 0 11.64 0 26s11.64 26 26 26 26-11.64 26-26S40.36 0 26 0zm0 48c-12.15 0-22-9.85-22-22S13.85 4 26 4s22 9.85 22 22-9.85 22-22 22z' fill='%23FF9644' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+    
+    .page-transition {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #FF9644, #FFCE99);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      transform: translateX(0);
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(139, 105, 20, 0.2);
+    }
+    
+    .scroll-indicator {
+      animation: float 2s ease-in-out infinite;
+    }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 640px) {
+      .ornament-line {
+        width: 120px !important;
+      }
+      body {
+        font-size: 14px;
+      }
+      .page {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .ornament-line {
+        width: 160px !important;
+      }
+      body {
+        font-size: 15px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .ornament-line {
+        width: 192px !important;
+      }
+      body {
+        font-size: 16px;
+      }
+    }
+
+    /* Touch-friendly spacing */
+    @media (hover: none) and (pointer: coarse) {
+      button, a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* Optimize for iPads and tablets */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .max-w-7xl {
+        max-width: 90% !important;
+      }
+      .max-w-5xl {
+        max-width: 90% !important;
+      }
+      .max-w-4xl {
+        max-width: 90% !important;
+      }
+    }
+
+    /* Container queries for different screen sizes */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    }
+    
+    .menu-item {
+      transition: all 0.3s ease;
+    }
+    
+    .menu-item:hover {
+      padding-left: 1rem;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), transparent);
+    }
+    
+    .ornament-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FF9644, transparent);
+    }
+    
+    .section-hidden {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+
+    .sidebar-menu {
+      scrollbar-width: thin;
+      scrollbar-color: #FF9644 #F0E6D2;
+    }
+    
+    .sidebar-menu::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .sidebar-menu::-webkit-scrollbar-track {
+      background: #F0E6D2;
+    }
+    
+    .sidebar-menu::-webkit-scrollbar-thumb {
+      background: #FF9644;
+      border-radius: 3px;
+    }
+
+    /* Batik Corner Motif */
+    .batik-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+
+    .batik-corner::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #3D2817;
+      transform: rotate(45deg);
+    }
+
+    .batik-corner::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #3D2817;
+      transform: rotate(45deg);
+    }
+
+    .batik-corner-tl::before {
+      top: -5px;
+      left: -5px;
+    }
+
+    .batik-corner-tl::after {
+      top: 8px;
+      left: 8px;
+    }
+
+    .batik-corner-tr::before {
+      top: -5px;
+      right: -5px;
+    }
+
+    .batik-corner-tr::after {
+      top: 8px;
+      right: 8px;
+    }
+
+    .batik-corner-bl::before {
+      bottom: -5px;
+      left: -5px;
+    }
+
+    .batik-corner-bl::after {
+      bottom: 8px;
+      left: 8px;
+    }
+
+    .batik-corner-br::before {
+      bottom: -5px;
+      right: -5px;
+    }
+
+    .batik-corner-br::after {
+      bottom: 8px;
+      right: 8px;
+    }
+    
+    window.elementSdk = window.elementSdk || {};
+  </style>
+  <script>
+    // Initialize ElementSdk stub if needed
+    if (!window.elementSdk) {
+      window.elementSdk = {
+        config: {},
+        init: function() {},
+        setConfig: function() {}
+      };
+    }
+    
+    // Navigation function
+    function navigateTo(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.add('hidden');
+      });
+      
+      // Show target page
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.classList.remove('hidden');
+        window.scrollTo(0, 0);
+      }
+    }
+    
+    // Tab switching function
+    function showTab(prefix, tabName) {
+      // Hide all tabs for this prefix
+      const allTabs = document.querySelectorAll('[id^="content-' + prefix + '-"]');
+      allTabs.forEach(tab => {
+        tab.classList.add('hidden');
+      });
+      
+      // Show selected tab
+      const selectedTab = document.getElementById('content-' + prefix + '-' + tabName);
+      if (selectedTab) {
+        selectedTab.classList.remove('hidden');
+      }
+      
+      // Update tab buttons
+      const allTabBtns = document.querySelectorAll('[id^="tab-' + prefix + '-"]');
+      allTabBtns.forEach(btn => {
+        btn.classList.remove('border-b-2', 'border-[#FF9644]', 'text-[#3D2817]');
+        btn.classList.add('border-b-2', 'border-transparent', 'text-[#3D2817]/60');
+      });
+      
+      const selectedBtn = document.getElementById('tab-' + prefix + '-' + tabName);
+      if (selectedBtn) {
+        selectedBtn.classList.remove('border-transparent', 'text-[#3D2817]/60');
+        selectedBtn.classList.add('border-[#FF9644]', 'text-[#3D2817]');
+      }
+    }
+    
+    // Quiz check function
+    function checkQuiz(prefix) {
+      const answers = {
+        'materi1': { 'q1-materi1': 'b', 'q2-materi1': 'c' },
+        'materi2': { 'q1-materi2': 'b' }
+      };
+      
+      let correct = 0;
+      let total = 0;
+      
+      if (answers[prefix]) {
+        for (const [question, correctAnswer] of Object.entries(answers[prefix])) {
+          const selected = document.querySelector('input[name="' + question + '"]:checked');
+          total++;
+          if (selected && selected.value === correctAnswer) {
+            correct++;
+          }
+        }
+      }
+      
+      const resultDiv = document.getElementById('result-' + prefix);
+      if (resultDiv) {
+        const percentage = Math.round((correct / total) * 100);
+        resultDiv.innerHTML = `
+          <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg p-6">
+            <p class="text-2xl font-bold text-[#3D2817] mb-2">Hasil: ${correct}/${total} Benar</p>
+            <p class="text-[#3D2817]/80">Nilai: ${percentage}%</p>
+            <p class="text-sm text-[#3D2817]/60 mt-4">${percentage >= 70 ? '✓ Nilai Lulus' : '✗ Kurang, coba lagi'}</p>
+          </div>
+        `;
+        resultDiv.classList.remove('hidden');
+      }
+    }
+    
+    // Handle start button click
+    document.addEventListener('DOMContentLoaded', function() {
+      const startBtn = document.getElementById('startBtn');
+      if (startBtn) {
+        startBtn.addEventListener('click', function() {
+          navigateTo('page-menu');
+        });
+      }
+    });
+  </script>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-[#FFFDF1] text-[#3D2817] overflow-x-hidden">
+  <div id="app" class="h-full w-full"><!-- Page 1: Cover/Sampul -->
+   <section id="page-cover" class="page min-h-full w-full relative overflow-hidden batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div><!-- Ornamental Border -->
+    <div class="absolute top-4 left-4 right-4 bottom-4 border border-[#FF9644]/30 pointer-events-none"></div>
+    <div class="absolute top-8 left-8 right-8 bottom-8 border border-[#FF9644]/20 pointer-events-none"></div><!-- Corner Ornaments - Batik Motif -->
+    <div class="absolute top-4 left-4 batik-corner batik-corner-tl pointer-events-none"></div>
+    <div class="absolute top-4 right-4 batik-corner batik-corner-tr pointer-events-none"></div>
+    <div class="absolute bottom-4 left-4 batik-corner batik-corner-bl pointer-events-none"></div>
+    <div class="absolute bottom-4 right-4 batik-corner batik-corner-br pointer-events-none"></div>
+    
+    <div class="relative z-10 min-h-full w-full flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
+     <!-- Layout Grid: Left Column (Logo, Judul, Identitas) | Right Column (Gambar Sampul) -->
+     <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center flex-1">
+      
+      <!-- KOLOM KIRI -->
+      <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+       
+       <!-- Nomor 4: Logo UNS (Pojok Kiri Atas dalam Kolom) -->
+       <div class="animate-fade-in-up flex justify-center" style="animation-delay: 0.2s;">
+        <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-[#562F00] overflow-hidden">
+         <!-- Placeholder untuk logo UNS -->
+         <img src="8.UNS.png" alt="Logo UNS" class="w-full h-full object-cover"/>
+        </div>
+       </div>
+       
+       <!-- Nomor 2: Judul Media -->
+       <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="bg-[#F0E6D2] border-2 border-[#3D2817] rounded-lg p-6">
+         <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center text-[#3D2817]" style="font-family: 'Cinzel', serif;">Ensiklopedia Digital Situs Raden Mas Said</h2>
+        </div>
+       </div>
+       
+       <!-- Nomor 3: Identitas Pengembang -->
+       <div class="animate-fade-in-up" style="animation-delay: 0.6s;">
+        <div class="bg-[#F0E6D2] border-2 border-[#3D2817] rounded-lg p-4 sm:p-5 md:p-6 text-center">
+         <!-- Placeholder untuk foto pengembang -->
+         <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 border-2 border-[#3D2817] flex items-center justify-center">
+          <img src="" alt="Foto Pengembang" class="w-full h-full object-cover rounded-full"/>
+         </div>
+         <p class="text-sm sm:text-base font-semibold text-[#3D2817]" style="font-family: 'Playfair Display', serif;">Nama Pengembang</p>
+         <p class="text-xs sm:text-sm text-[#3D2817]/70">NIM: 00000000</p>
+        </div>
+       </div>
+       
+      </div>
+      
+      <!-- KOLOM KANAN: Nomor 1 - Gambar Sampul -->
+      <div class="animate-fade-in-up h-full" style="animation-delay: 0.8s;">
+       <div class="bg-white border-4 border-[#3D2817] rounded-lg shadow-xl p-4 sm:p-5 md:p-6 h-full min-h-72 sm:min-h-80 md:min-h-96 flex items-center justify-center overflow-hidden">
+        <!-- Placeholder untuk gambar sampul -->
+        <img src="" alt="Gambar Sampul" class="w-full h-full object-cover"/>
+        <div class="absolute text-center text-[#3D2817]/40 pointer-events-none">
+         <p class="text-lg font-semibold">Gambar Sampul</p>
+        </div>
+       </div>
+      </div>
+      
+     </div>
+     
+     <!-- Tombol MULAI PEMBELAJARAN -->
+     <div class="animate-fade-in-up mt-8 sm:mt-10 md:mt-12" style="animation-delay: 1.0s;">
+      <button id="startBtn" class="px-8 sm:px-12 md:px-16 lg:px-20 py-2 sm:py-2.5 md:py-3 bg-transparent border-2 border-[#3D2817] text-xs sm:text-sm md:text-base text-[#3D2817] font-semibold rounded-lg hover:bg-[#3D2817]/5 hover:shadow-lg hover:shadow-[#3D2817]/20 transition-all duration-300 card-hover cursor-pointer" style="font-family: 'Cinzel', serif;"> MULAI PEMBELAJARAN </button>
+     </div>
+    </div>
+   </section><!-- Page 2: Menu Utama -->
+   <section id="page-menu" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full"><!-- Header -->
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+       <div class="flex items-center gap-4">
+        <svg class="w-10 h-10 text-[#3D2817]" viewbox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" /> <path d="M20 8 L24 16 L32 16 L26 22 L28 30 L20 25 L12 30 L14 22 L8 16 L16 16 Z" fill="currentColor" transform="scale(0.6) translate(13, 13)" />
+        </svg>
+        <div>
+         <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Ensiklopedia</h1>
+         <p class="text-xs text-[#3D2817]/60">Raden Mas Said</p>
+        </div>
+       </div><button onclick="navigateTo('page-cover')" class="text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg></button>
+      </div>
+     </header>
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12"><!-- Page Title -->
+      <div class="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in-up">
+       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">MENU UTAMA</h2>
+       <div class="ornament-line w-32 sm:w-40 md:w-48 mx-auto"></div>
+      </div><!-- Menu Grid - Asymmetric Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+       <!-- Left Sidebar - 4 Small Items -->
+       <div class="lg:col-span-2 flex flex-col gap-6">
+        <!-- Kata Pengantar -->
+        <div onclick="navigateTo('page-pengantar')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 animate-fade-in-up" style="animation-delay: 0.1s;">
+         <div class="w-12 h-12 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+         </div>
+         <h3 class="text-lg font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Kata Pengantar</h3>
+         <p class="text-[#3D2817]/70 text-xs sm:text-sm">Sambutan dan pengantar media pembelajaran</p>
+        </div>
+        <!-- Daftar Isi -->
+        <div onclick="navigateTo('page-daftar-isi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 animate-fade-in-up" style="animation-delay: 0.2s;">
+         <div class="w-12 h-12 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+         </div>
+         <h3 class="text-lg font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Daftar Isi</h3>
+         <p class="text-[#3D2817]/70 text-xs sm:text-sm">Navigasi lengkap semua konten</p>
+        </div>
+        <!-- Pengantar Pembelajaran -->
+        <div onclick="navigateTo('page-pengantar-pembelajaran')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 animate-fade-in-up" style="animation-delay: 0.3s;">
+         <div class="w-12 h-12 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+         </div>
+         <h3 class="text-lg font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Pengantar Pembelajaran</h3>
+         <p class="text-[#3D2817]/70 text-xs sm:text-sm">Capaian, tujuan, dan kerangka belajar</p>
+        </div>
+        <!-- Menu Materi -->
+        <div onclick="navigateTo('page-menu-materi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 animate-fade-in-up" style="animation-delay: 0.4s;">
+         <div class="w-12 h-12 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+         </div>
+         <h3 class="text-lg font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Menu Materi</h3>
+         <p class="text-[#3D2817]/70 text-xs sm:text-sm">8 modul materi tentang Raden Mas Said</p>
+        </div>
+       </div>
+       <!-- Right Column - 2 Large Items -->
+       <div class="lg:col-span-3 flex flex-col gap-6">
+        <!-- Judul Media (Large) -->
+        <div onclick="navigateTo('page-cover')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 sm:p-8 animate-fade-in-up h-48 sm:h-56 flex flex-col justify-center items-center text-center" style="animation-delay: 0.5s;">
+         <div class="w-16 h-16 sm:w-20 sm:h-20 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 sm:w-10 h-8 sm:h-10 text-[#3D2817]" viewbox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" /> <path d="M20 8 L24 16 L32 16 L26 22 L28 30 L20 25 L12 30 L14 22 L8 16 L16 16 Z" fill="currentColor" transform="scale(0.6) translate(13, 13)" />
+          </svg>
+         </div>
+         <h3 class="text-2xl sm:text-3xl font-semibold text-[#3D2817] mb-3" style="font-family: 'Playfair Display', serif;">Ensiklopedia</h3>
+         <p class="text-[#3D2817]/70 text-sm sm:text-base">Raden Mas Said</p>
+        </div>
+        <!-- Petunjuk Penggunaan (Large) -->
+        <div onclick="navigateTo('page-petunjuk')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 sm:p-8 animate-fade-in-up h-48 sm:h-56 flex flex-col justify-center items-center text-center" style="animation-delay: 0.6s;">
+         <div class="w-16 h-16 sm:w-20 sm:h-20 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-6">
+          <svg class="w-8 sm:w-10 h-8 sm:h-10 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+         </div>
+         <h3 class="text-2xl sm:text-3xl font-semibold text-[#3D2817] mb-3" style="font-family: 'Playfair Display', serif;">Petunjuk</h3>
+         <p class="text-[#3D2817]/70 text-sm sm:text-base">Penggunaan Media</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 3: Kata Pengantar -->
+   <section id="page-pengantar" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full"><!-- Header -->
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Kata Pengantar</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8 md:p-12 animate-fade-in-up"><!-- Decorative Header -->
+       <div class="text-center mb-8">
+        <svg class="w-16 h-16 text-[#3D2817] mx-auto mb-4" viewbox="0 0 64 64"><path d="M32 8 L40 24 L56 24 L44 36 L48 52 L32 44 L16 52 L20 36 L8 24 L24 24 Z" fill="currentColor" opacity="0.3" /> <path d="M32 16 L36 26 L46 26 L38 32 L40 42 L32 38 L24 42 L26 32 L18 26 L28 26 Z" fill="currentColor" />
+        </svg>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">KATA PENGANTAR</h2>
+        <div class="ornament-line w-32 mx-auto mt-4"></div>
+       </div>
+       <div class="prose prose-lg text-[#3D2817]/90 space-y-6" style="font-family: 'Crimson Text', serif;">
+        <p class="text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-[#3D2817] first-letter:float-left first-letter:mr-3">Puji syukur kami panjatkan kehadirat Tuhan Yang Maha Esa atas rahmat dan karunia-Nya sehingga media pembelajaran ensiklopedia digital tentang <strong class="text-[#3D2817]">Raden Mas Said</strong> dapat terselesaikan dengan baik.</p>
+        <p class="leading-relaxed">Media pembelajaran ini disusun sebagai upaya untuk memperkenalkan dan melestarikan sejarah perjuangan pahlawan nasional dari tanah Jawa, khususnya <strong class="text-[#3D2817]">Pangeran Sambernyawa</strong>, pendiri dinasti Mangkunegaran yang telah memberikan kontribusi besar dalam sejarah perjuangan bangsa Indonesia.</p>
+        <p class="leading-relaxed">Melalui media interaktif ini, diharapkan para peserta didik dapat memahami secara komprehensif tentang kehidupan, perjuangan, dan warisan budaya yang ditinggalkan oleh Raden Mas Said. Semoga media ini dapat menjadi sarana pembelajaran yang efektif dan menyenangkan.</p>
+        <div class="mt-8 pt-8 border-t border-[#FF9644]/30">
+         <p class="text-right text-[#3D2817]/70 italic">Surakarta, 2024<br><span class="text-[#3D2817]">Tim Pengembang</span></p>
+        </div>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-menu')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Menu Utama </button> <button onclick="navigateTo('page-petunjuk')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Petunjuk Penggunaan → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 4: Petunjuk Penggunaan -->
+   <section id="page-petunjuk" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Petunjuk Penggunaan</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PETUNJUK PENGGUNAAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="space-y-6"><!-- Step 1 -->
+       <div class="flex gap-6 items-start bg-[#F0E6D2]/60 border border-[#FF9644]/20 rounded-lg p-6 animate-slide-left" style="animation-delay: 0.1s;">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold text-xl">
+         1
+        </div>
+        <div>
+         <h3 class="text-xl font-semibold text-[#3D2817] mb-2">Navigasi Menu</h3>
+         <p class="text-[#3D2817]/80">Gunakan menu utama untuk mengakses berbagai bagian media pembelajaran. Klik pada kotak menu untuk masuk ke halaman yang diinginkan.</p>
+        </div>
+       </div><!-- Step 2 -->
+       <div class="flex gap-6 items-start bg-[#F0E6D2]/60 border border-[#FF9644]/20 rounded-lg p-6 animate-slide-right" style="animation-delay: 0.2s;">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold text-xl">
+         2
+        </div>
+        <div>
+         <h3 class="text-xl font-semibold text-[#3D2817] mb-2">Baca Materi</h3>
+         <p class="text-[#3D2817]/80">Pelajari setiap materi secara berurutan mulai dari Materi 1 hingga Materi 8. Setiap materi dilengkapi dengan video pembelajaran dan latihan soal.</p>
+        </div>
+       </div><!-- Step 3 -->
+       <div class="flex gap-6 items-start bg-[#F0E6D2]/60 border border-[#FF9644]/20 rounded-lg p-6 animate-slide-left" style="animation-delay: 0.3s;">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold text-xl">
+         3
+        </div>
+        <div>
+         <h3 class="text-xl font-semibold text-[#3D2817] mb-2">Tonton Video</h3>
+         <p class="text-[#3D2817]/80">Setiap materi memiliki video pembelajaran yang dapat diputar. Klik tombol play untuk memulai video.</p>
+        </div>
+       </div><!-- Step 4 -->
+       <div class="flex gap-6 items-start bg-[#F0E6D2]/60 border border-[#FF9644]/20 rounded-lg p-6 animate-slide-right" style="animation-delay: 0.4s;">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold text-xl">
+         4
+        </div>
+        <div>
+         <h3 class="text-xl font-semibold text-[#3D2817] mb-2">Kerjakan Latihan</h3>
+         <p class="text-[#3D2817]/80">Setelah mempelajari materi, kerjakan latihan soal untuk menguji pemahaman Anda. Jawaban akan dinilai secara otomatis.</p>
+        </div>
+       </div><!-- Step 5 -->
+       <div class="flex gap-6 items-start bg-[#F0E6D2]/60 border border-[#FF9644]/20 rounded-lg p-6 animate-slide-left" style="animation-delay: 0.5s;">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold text-xl">
+         5
+        </div>
+        <div>
+         <h3 class="text-xl font-semibold text-[#3D2817] mb-2">Tombol Navigasi</h3>
+         <p class="text-[#3D2817]/80">Gunakan tombol "Kembali" untuk ke halaman sebelumnya dan tombol navigasi di bawah untuk melanjutkan ke halaman berikutnya.</p>
+        </div>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-12"><button onclick="navigateTo('page-pengantar')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Kata Pengantar </button> <button onclick="navigateTo('page-daftar-isi')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Daftar Isi → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 5: Daftar Isi -->
+   <section id="page-daftar-isi" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Daftar Isi</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">DAFTAR ISI</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="bg-[#F0E6D2]/60 border border-[#FF9644]/30 rounded-lg overflow-hidden"><!-- Section: Pendahuluan -->
+       <div class="border-b border-[#FF9644]/20">
+        <h3 class="bg-[#FF9644]/10 px-6 py-3 text-[#3D2817] font-semibold" style="font-family: 'Cinzel', serif;">PENDAHULUAN</h3>
+        <div class="divide-y divide-[#FF9644]/10"><button onclick="navigateTo('page-pengantar')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Kata Pengantar</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-petunjuk')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Petunjuk Penggunaan</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button>
+        </div>
+       </div><!-- Section: Pengantar Pembelajaran -->
+       <div class="border-b border-[#FF9644]/20">
+        <h3 class="bg-[#FF9644]/10 px-6 py-3 text-[#3D2817] font-semibold" style="font-family: 'Cinzel', serif;">PENGANTAR PEMBELAJARAN</h3>
+        <div class="divide-y divide-[#FF9644]/10"><button onclick="navigateTo('page-capaian')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Capaian Pembelajaran</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-tujuan')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Tujuan Pembelajaran</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-dimensi')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>8 Dimensi Profil Lulusan</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-prinsip')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Prinsip Pembelajaran</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-pengalaman')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Pengalaman Belajar</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-kerangka')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Kerangka Pembelajaran</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button>
+        </div>
+       </div><!-- Section: Materi Pembelajaran -->
+       <div class="border-b border-[#FF9644]/20">
+        <h3 class="bg-[#FF9644]/10 px-6 py-3 text-[#3D2817] font-semibold" style="font-family: 'Cinzel', serif;">MATERI PEMBELAJARAN</h3>
+        <div class="divide-y divide-[#FF9644]/10"><button onclick="navigateTo('page-materi-1')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 1: Latar Belakang Keluarga</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-2')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 2: Masa Muda &amp; Pemberontakan</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-3')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 3: Gelar Pangeran Sambernyawa</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-4')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 4: Perjanjian Salatiga</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-5')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 5: Berdirinya Mangkunegaran</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-6')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 6: Warisan Budaya</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-materi-7')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Materi 7: Strategi Perang</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button>
+        </div>
+       </div><!-- Section: Penutup -->
+       <div>
+        <h3 class="bg-[#FF9644]/10 px-6 py-3 text-[#3D2817] font-semibold" style="font-family: 'Cinzel', serif;">PENUTUP</h3>
+        <div class="divide-y divide-[#FF9644]/10"><button onclick="navigateTo('page-kesimpulan')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Kesimpulan</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-pustaka')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Daftar Pustaka</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button> <button onclick="navigateTo('page-terimakasih')" class="menu-item w-full text-left px-6 py-3 text-[#3D2817]/80 hover:text-[#3D2817] flex justify-between items-center"> <span>Terima Kasih</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg></button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 6: Pengantar Pembelajaran -->
+   <section id="page-pengantar-pembelajaran" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Pengantar Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PENGANTAR PEMBELAJARAN</h2>
+       <p class="text-sm sm:text-base text-[#3D2817]/70">Pilih menu untuk mempelajari komponen pembelajaran</p>
+       <div class="ornament-line w-48 mx-auto mt-4"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+       <div onclick="navigateTo('page-capaian')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.1s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">🎯</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">Capaian Pembelajaran</h3>
+        <p class="text-sm text-[#3D2817]/60">Target kompetensi yang harus dicapai</p>
+       </div>
+       <div onclick="navigateTo('page-tujuan')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.2s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">📌</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">Tujuan Pembelajaran</h3>
+        <p class="text-sm text-[#3D2817]/60">Sasaran spesifik pembelajaran</p>
+       </div>
+       <div onclick="navigateTo('page-dimensi')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.3s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">⭐</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">8 Dimensi Profil</h3>
+        <p class="text-sm text-[#3D2817]/60">Profil lulusan yang diharapkan</p>
+       </div>
+       <div onclick="navigateTo('page-prinsip')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.4s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">📜</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">Prinsip Pembelajaran</h3>
+        <p class="text-sm text-[#3D2817]/60">Dasar-dasar metode pembelajaran</p>
+       </div>
+       <div onclick="navigateTo('page-pengalaman')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.5s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">💡</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">Pengalaman Belajar</h3>
+        <p class="text-sm text-[#3D2817]/60">Aktivitas pembelajaran peserta</p>
+       </div>
+       <div onclick="navigateTo('page-kerangka')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.6s;">
+        <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">🗂️</span>
+        </div>
+        <h3 class="text-lg font-semibold text-[#3D2817] mb-2">Kerangka Pembelajaran</h3>
+        <p class="text-sm text-[#3D2817]/60">Struktur dan alur pembelajaran</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 7: Capaian Pembelajaran -->
+   <section id="page-capaian" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-pengantar-pembelajaran')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Capaian Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        🎯
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">CAPAIAN PEMBELAJARAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+       <p class="text-base sm:text-lg text-[#3D2817]/90 leading-relaxed mb-6" style="font-family: 'Crimson Text', serif;">Setelah mempelajari materi ini, peserta didik diharapkan mampu:</p>
+       <ul class="space-y-4">
+        <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">1</span> <p class="text-[#3D2817]/80">Menganalisis latar belakang kehidupan dan perjuangan Raden Mas Said dalam konteks sejarah Kesultanan Mataram</p></li>
+        <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">2</span> <p class="text-[#3D2817]/80">Mengevaluasi strategi politik dan militer Pangeran Sambernyawa dalam perlawanan terhadap VOC</p></li>
+        <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">3</span> <p class="text-[#3D2817]/80">Memahami proses berdirinya Kadipaten Mangkunegaran dan dampaknya terhadap struktur kekuasaan di Jawa</p></li>
+        <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">4</span> <p class="text-[#3D2817]/80">Mengapresiasi warisan budaya dan nilai-nilai kepahlawanan yang ditinggalkan Mangkunegara I</p></li>
+       </ul>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-pengantar-pembelajaran')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Kembali </button> <button onclick="navigateTo('page-tujuan')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Tujuan Pembelajaran → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 8: Tujuan Pembelajaran -->
+   <section id="page-tujuan" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-capaian')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Tujuan Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        📌
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">TUJUAN PEMBELAJARAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-slide-left" style="animation-delay: 0.1s;">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold">
+          1
+         </div>
+         <h3 class="text-[#3D2817] font-semibold">Kognitif</h3>
+        </div>
+        <p class="text-[#3D2817]/80 text-sm">Peserta didik dapat menjelaskan kronologi perjuangan Raden Mas Said dari masa muda hingga menjadi Mangkunegara I</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-slide-right" style="animation-delay: 0.2s;">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold">
+          2
+         </div>
+         <h3 class="text-[#3D2817] font-semibold">Analisis</h3>
+        </div>
+        <p class="text-[#3D2817]/80 text-sm">Peserta didik dapat menganalisis faktor-faktor yang menyebabkan keberhasilan perjuangan Pangeran Sambernyawa</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-slide-left" style="animation-delay: 0.3s;">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold">
+          3
+         </div>
+         <h3 class="text-[#3D2817] font-semibold">Afektif</h3>
+        </div>
+        <p class="text-[#3D2817]/80 text-sm">Peserta didik dapat menghayati nilai-nilai kepahlawanan dan semangat juang yang dapat diteladani</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-slide-right" style="animation-delay: 0.4s;">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-10 h-10 bg-[#FF9644] rounded-full flex items-center justify-center text-[#3D2817] font-bold">
+          4
+         </div>
+         <h3 class="text-[#3D2817] font-semibold">Aplikatif</h3>
+        </div>
+        <p class="text-[#3D2817]/80 text-sm">Peserta didik dapat mengaplikasikan nilai-nilai perjuangan dalam kehidupan sehari-hari sebagai generasi muda</p>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-capaian')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Capaian </button> <button onclick="navigateTo('page-dimensi')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> 8 Dimensi → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 9: 8 Dimensi Profil Lulusan -->
+   <section id="page-dimensi" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-tujuan')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">8 Dimensi Profil</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        ⭐
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">8 DIMENSI PROFIL LULUSAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.1s;">
+        <div class="text-3xl mb-3">
+         🇮🇩
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Beriman &amp; Bertaqwa</h3>
+        <p class="text-[#3D2817]/70 text-xs">Berakhlak mulia kepada Tuhan YME</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.15s;">
+        <div class="text-3xl mb-3">
+         🌍
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Berkebhinekaan</h3>
+        <p class="text-[#3D2817]/70 text-xs">Menghargai keberagaman budaya</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.2s;">
+        <div class="text-3xl mb-3">
+         🤝
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Gotong Royong</h3>
+        <p class="text-[#3D2817]/70 text-xs">Bekerja sama untuk tujuan bersama</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.25s;">
+        <div class="text-3xl mb-3">
+         💪
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Mandiri</h3>
+        <p class="text-[#3D2817]/70 text-xs">Bertanggung jawab atas diri sendiri</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.3s;">
+        <div class="text-3xl mb-3">
+         🧠
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Bernalar Kritis</h3>
+        <p class="text-[#3D2817]/70 text-xs">Berpikir analitis dan sistematis</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.35s;">
+        <div class="text-3xl mb-3">
+         🎨
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Kreatif</h3>
+        <p class="text-[#3D2817]/70 text-xs">Menghasilkan karya inovatif</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.4s;">
+        <div class="text-3xl mb-3">
+         🏛️
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Nasionalis</h3>
+        <p class="text-[#3D2817]/70 text-xs">Cinta tanah air Indonesia</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5 text-center animate-scale-in hover:border-[#FF9644] transition-colors" style="animation-delay: 0.45s;">
+        <div class="text-3xl mb-3">
+         ⚖️
+        </div>
+        <h3 class="text-[#3D2817] font-semibold mb-2">Integritas</h3>
+        <p class="text-[#3D2817]/70 text-xs">Jujur dan konsisten dalam tindakan</p>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-tujuan')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Tujuan </button> <button onclick="navigateTo('page-prinsip')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Prinsip → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 10: Prinsip Pembelajaran -->
+   <section id="page-prinsip" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-dimensi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Prinsip Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        📜
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PRINSIP PEMBELAJARAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="space-y-4">
+       <div class="bg-[#F0E6D2]/80 border-l-4 border-[#FF9644] rounded-r-lg p-6 animate-slide-left" style="animation-delay: 0.1s;">
+        <h3 class="text-[#3D2817] font-semibold mb-2">Student-Centered Learning</h3>
+        <p class="text-[#3D2817]/80 text-sm">Pembelajaran berpusat pada peserta didik dengan pendekatan aktif dan partisipatif</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border-l-4 border-[#FF9644] rounded-r-lg p-6 animate-slide-right" style="animation-delay: 0.2s;">
+        <h3 class="text-[#3D2817] font-semibold mb-2">Contextual Learning</h3>
+        <p class="text-[#3D2817]/80 text-sm">Materi dikaitkan dengan konteks sejarah dan relevansi masa kini</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border-l-4 border-[#FF9644] rounded-r-lg p-6 animate-slide-left" style="animation-delay: 0.3s;">
+        <h3 class="text-[#3D2817] font-semibold mb-2">Multimedia Integration</h3>
+        <p class="text-[#3D2817]/80 text-sm">Penggunaan berbagai media untuk memperkaya pengalaman belajar</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border-l-4 border-[#FF9644] rounded-r-lg p-6 animate-slide-right" style="animation-delay: 0.4s;">
+        <h3 class="text-[#3D2817] font-semibold mb-2">Assessment for Learning</h3>
+        <p class="text-[#3D2817]/80 text-sm">Penilaian sebagai bagian dari proses pembelajaran berkelanjutan</p>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-dimensi')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← 8 Dimensi </button> <button onclick="navigateTo('page-pengalaman')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Pengalaman → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 11: Pengalaman Belajar -->
+   <section id="page-pengalaman" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-prinsip')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Pengalaman Belajar</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        💡
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PENGALAMAN BELAJAR</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="relative"><!-- Timeline -->
+       <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-[#FF9644]/30"></div>
+       <div class="space-y-8">
+        <div class="relative pl-20 animate-fade-in-up" style="animation-delay: 0.1s;">
+         <div class="absolute left-5 w-6 h-6 bg-[#FF9644] rounded-full border-4 border-[#FFFDF1]"></div>
+         <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5">
+          <h3 class="text-[#3D2817] font-semibold mb-2">Membaca &amp; Mengamati</h3>
+          <p class="text-[#3D2817]/80 text-sm">Mempelajari materi teks dan mengamati media visual tentang Raden Mas Said</p>
+         </div>
+        </div>
+        <div class="relative pl-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+         <div class="absolute left-5 w-6 h-6 bg-[#FF9644] rounded-full border-4 border-[#FFFDF1]"></div>
+         <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5">
+          <h3 class="text-[#3D2817] font-semibold mb-2">Menonton Video</h3>
+          <p class="text-[#3D2817]/80 text-sm">Menyaksikan video pembelajaran untuk pemahaman visual yang lebih baik</p>
+         </div>
+        </div>
+        <div class="relative pl-20 animate-fade-in-up" style="animation-delay: 0.3s;">
+         <div class="absolute left-5 w-6 h-6 bg-[#FF9644] rounded-full border-4 border-[#FFFDF1]"></div>
+         <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5">
+          <h3 class="text-[#3D2817] font-semibold mb-2">Mengerjakan Latihan</h3>
+          <p class="text-[#3D2817]/80 text-sm">Menguji pemahaman melalui soal-soal interaktif di setiap akhir materi</p>
+         </div>
+        </div>
+        <div class="relative pl-20 animate-fade-in-up" style="animation-delay: 0.4s;">
+         <div class="absolute left-5 w-6 h-6 bg-[#FF9644] rounded-full border-4 border-[#FFFDF1]"></div>
+         <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-5">
+          <h3 class="text-[#3D2817] font-semibold mb-2">Merefleksikan</h3>
+          <p class="text-[#3D2817]/80 text-sm">Menghubungkan nilai-nilai sejarah dengan kehidupan sehari-hari</p>
+         </div>
+        </div>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-12"><button onclick="navigateTo('page-prinsip')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Prinsip </button> <button onclick="navigateTo('page-kerangka')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Kerangka → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 12: Kerangka Pembelajaran -->
+   <section id="page-kerangka" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-pengalaman')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Kerangka Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <div class="text-5xl mb-4">
+        🗂️
+       </div>
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">KERANGKA PEMBELAJARAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div><!-- Learning Flow -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
+       <div class="bg-[#FF9644] text-[#3D2817] px-6 py-3 rounded-lg font-semibold animate-scale-in" style="animation-delay: 0.1s;">
+        Pendahuluan
+       </div>
+       <svg class="w-8 h-8 text-[#3D2817] rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+       </svg>
+       <div class="bg-[#FF9644] text-[#3D2817] px-6 py-3 rounded-lg font-semibold animate-scale-in" style="animation-delay: 0.2s;">
+        Inti
+       </div>
+       <svg class="w-8 h-8 text-[#3D2817] rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+       </svg>
+       <div class="bg-[#FF9644] text-[#3D2817] px-6 py-3 rounded-lg font-semibold animate-scale-in" style="animation-delay: 0.3s;">
+        Penutup
+       </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <h3 class="text-[#3D2817] font-semibold mb-4 text-center">PENDAHULUAN</h3>
+        <ul class="space-y-2 text-sm text-[#3D2817]/80">
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Orientasi dan apersepsi</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Pengenalan materi</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Tujuan pembelajaran</span></li>
+        </ul>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.5s;">
+        <h3 class="text-[#3D2817] font-semibold mb-4 text-center">KEGIATAN INTI</h3>
+        <ul class="space-y-2 text-sm text-[#3D2817]/80">
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Penyajian materi (8 modul)</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Video pembelajaran</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Latihan soal interaktif</span></li>
+        </ul>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.6s;">
+        <h3 class="text-[#3D2817] font-semibold mb-4 text-center">PENUTUP</h3>
+        <ul class="space-y-2 text-sm text-[#3D2817]/80">
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Kesimpulan materi</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Refleksi pembelajaran</span></li>
+         <li class="flex items-start gap-2"><span class="text-[#3D2817]">•</span> <span>Evaluasi akhir</span></li>
+        </ul>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-pengalaman')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Pengalaman </button> <button onclick="navigateTo('page-menu-materi')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Menu Materi → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 13: Menu Materi -->
+   <section id="page-menu-materi" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Menu Utama</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi Pembelajaran</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="text-center mb-12 animate-fade-in-up">
+       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">MATERI PEMBELAJARAN</h2>
+       <p class="text-[#3D2817]/70">Pilih materi yang ingin dipelajari</p>
+       <div class="ornament-line w-48 mx-auto mt-4"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div onclick="navigateTo('page-materi-1')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.1s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          👶
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 1</h3>
+         <p class="text-[#3D2817]/70 text-sm">Perjuangan Raden Mas Said</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-2')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.15s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          ⚔️
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 2</h3>
+         <p class="text-[#3D2817]/70 text-sm">Raden Mas Said di Wonogiri</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-3')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.2s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          🏆
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 3</h3>
+         <p class="text-[#3D2817]/70 text-sm">Prasasti Nglaroh</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-4')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.25s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          📜
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 4</h3>
+         <p class="text-[#3D2817]/70 text-sm">Sendang Sinangka</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-5')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.3s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          🏛️
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 5</h3>
+         <p class="text-[#3D2817]/70 text-sm">Sendang Siwani</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-6')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.35s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          🎭
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 6</h3>
+         <p class="text-[#3D2817]/70 text-sm">Makam BRA Matah Ati</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-materi-7')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.4s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          🗡️
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Materi 7</h3>
+         <p class="text-[#3D2817]/70 text-sm">Identitas Politik Kabupaten Wonogiri</p>
+        </div>
+       </div>
+       <div onclick="navigateTo('page-kesimpulan')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg overflow-hidden animate-scale-in" style="animation-delay: 0.45s;">
+        <div class="h-2 bg-gradient-to-r from-[#562F00] via-[#FF9644] to-[#562F00]"></div>
+        <div class="p-6">
+         <div class="text-3xl mb-3">
+          ✓
+         </div>
+         <h3 class="text-[#3D2817] font-semibold mb-2">Kesimpulan</h3>
+         <p class="text-[#3D2817]/70 text-sm">Ringkasan Pembelajaran</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 14: Materi 1 - Perjuangan Raden Mas Said -->
+   <section id="page-materi-1" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 1</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12"><!-- Content Tabs -->
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi1', 'video')" id="tab-materi1-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold"> 📹 Video </button> <button onclick="showTab('materi1', 'content')" id="tab-materi1-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent"> 📖 Materi </button> <button onclick="showTab('materi1', 'quiz')" id="tab-materi1-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent"> ✍️ Latihan </button>
+      </div><!-- Video Tab -->
+      <div id="content-materi1-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">LATAR BELAKANG KELUARGA</h2>
+        <p class="text-[#3D2817]/70">Video Pembelajaran Materi 1</p>
+       </div>
+       <div class="bg-[#000000] border border-[#FF9644]/30 rounded-lg aspect-video overflow-hidden">
+        <video controls loop playsinline style="width: 100%; height: 100%; object-fit: contain;">
+         <source src="video dokumenter rms.mp4" type="video/mp4">
+         Browser Anda tidak mendukung video HTML5.
+        </video>
+       </div>
+      </div><!-- Content Tab -->
+      <div id="content-materi1-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">PERJUANGAN RADEN MAS SAID</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <h3 class="text-[#3D2817] text-xl mb-4">Kelahiran dan Latar Belakang Keluarga</h3>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;"><strong class="text-[#3D2817]">Raden Mas Said</strong> lahir di Keraton Kartasura pada <strong>7 April 1725</strong> sebagai putra KPA Mangkunegara dan Raden Ayu Wulan. Ayahnya yang seharusnya menjadi pewaris takhta Mataram justru disingkirkan dan dibuang ke Ceylon (Srilangka) selanjutnya ke Kaapstad (Afika Timur), sementara Raden Mas Prabasuyasa diangkat menjadi raja bergelar Pakubuwana II. Peristiwa tersebut membuat Raden Mas Said merasa diperlakukan tidak adil dan mendorongnya melakukan perlawanan terhadap Kasunanan Surakarta (Hendro, 2017; Sudardi, 2022).</p>
+
+         <h3 class="text-[#3D2817] text-xl mb-4 mt-6">Awal Perjuangan Melawan Pakubuwana II</h3>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Pada usia 19 tahun, Raden Mas Said memulai perjuangannya melawan Pakubuwana II dan pihak-pihak yang bersekutu dengannya. Selama 16 tahun, ia terlibat dalam lebih dari 250 pertempuran, menunjukkan ketangguhan dan strategi militernya. Keberaniannya dalam pertempuran membuatnya dijuluki <strong>"Pangeran Sambernyawa"</strong> oleh lawan-lawannya (Sudardi, 2022).</p>
+
+         <h3 class="text-[#3D2817] text-xl mb-4 mt-6">Meninggalkan Istana dan Memulai Perlawanan</h3>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Karena kondisi keraton yang tidak aman dan demi keselamatan adik-adiknya, Raden Mas Said meninggalkan istana bersama beberapa kerabat, seperti Sutawijaya dan Suradiwangsa. Atas saran Suradiwangsa, ia pergi ke Nglaroh, tempat yang sudah dikenal baik oleh Suradiwangsa. Di Nglaroh, Raden Mas Said dan para pengikutnya melakukan latihan perang sebagai persiapan melawan Belanda, sekaligus menunjukkan awal kepemimpinannya. Ia kemudian menjadi pemimpin perlawanan dengan mengangkat Raden Sutawijaya sebagai panglima perang bergelar Raden Ngabehi Rangga Panambang dan Suradiwangsa sebagai patih bergelar Kyai Kudanawarsa (Sudardi, 2022).</p>
+
+         <h3 class="text-[#3D2817] text-xl mb-4 mt-6">Periode Perjuangan Melawan Belanda</h3>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Semenjak <strong>1741</strong> Raden Mas Said mengobarkan perlawanan terhadap Belanda selama 16 tahun. Periode perang pertama (1741-1742) bergabung dengan Sunan Kuning di Randu Lawang. Periode kedua selama sembilan tahun (1743-1752) bersama dengan Pangeran Mangkubumi. Periode ketiga selama lima tahun (1752-1757) Raden Mas Said berjuang sendiri melawan tiga kekuatan yaitu VOC, Sultan Hamengku Buwana I dan Pakubuwana III. Selama perjuangannya yang sangat panjang, melakukan perang gerilya dan berpindah-pindah ajang pertempuran, Raden Mas Said ditemani oleh neneknya Raden Ajeng Sumanarsa, kedua isterinya (Kangjeng Ratu Bendara dan Mas Ayu Matah Ati), putera-puteranya serta pengikut setianya (Sudardi, 2022). Mereka semua terlatih duduk di atas punggung kuda, naik-turun pegunungan dan lembah, serta berbakat dalam bertahan hidup (Anjani, Yunianto, and Purwanta 2023).</p>
+
+         <h3 class="text-[#3D2817] text-xl mb-4 mt-6">Perjanjian Salatiga dan Pengakuan sebagai Mangkunegara I</h3>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Perjuangan Raden Mas Said mencapai puncaknya dengan ditandatangani <strong>perjanjian Salatiga pada 17 Maret 1757</strong> mengukuhkan Raden Mas Said sebagai penguasa Praja Mangkunegaran dengan gelar <strong>Kanjeng Gusti Pangeran Adipati Arya (KGPAA) Mangkunegara I</strong> (Pringgodigdo, 1950; Ricklefs, 1974). Mangkunegara I memerintah hingga wafat pada 28 Desember 1795, meninggalkan warisan kepemimpinan yang signifikan dalam sejarah Jawa (Sujarwo, Aini, and Susanto, 2023).</p>
+
+         <h3 class="text-[#3D2817] text-xl mb-4 mt-6">Wilayah Praja Mangkunegaran</h3>
+         <p class="leading-relaxed" style="text-align: justify;">Wilayah Praja Mangkunegaran mencakup Keduwang meliputi Jatisrana dan Ngadiraja serta Girimarta; Laroh (Nglaroh) meliputi Nambangan dan Wonogiri; Haribaya meliputi Kepuh; Wiroko meliputi wilayah Tirtomoyo; Hanggabayan meliputi Jatipura dan Jumapala, serta Sembuyan meliputi Baturetno dan Wuryantoro, Gunung Kidul dan Matesih (Wasino, 2012). Daerah tersebut sekarang menjadi bagian dari kabupaten Wonogiri kecuali Matesih dan Gunung Kidul. Matesih masuk ke Karanganyar dan Gunung Kidul menjadi wilayah Daerah Istimewa Yogyakarta.</p>
+        </div>
+       </div>
+      </div><!-- Quiz Tab -->
+      <div id="content-materi1-quiz" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">LATIHAN SOAL</h2>
+        <p class="text-[#3D2817]/70">Uji pemahaman Anda tentang Materi 1</p>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 1. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=01096074" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div><!-- Navigation -->
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-menu-materi')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors"> ← Menu Materi </button> <button onclick="navigateTo('page-materi-2')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold"> Materi 2 → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Page 15: Materi 2-8 (Template - showing Materi 2 as example) -->
+   <section id="page-materi-2" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 2</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi2', 'video')" id="tab-materi2-foto" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📹 Foto</button> <button onclick="showTab('materi2', 'content')" id="tab-materi2-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi2', 'quiz')" id="tab-materi2-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi2-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">FOTO</h2>
+        <p class="text-[#3D2817]/70">Dokumentasi Wilayah Perjuangan Raden Mas Said</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture1.png" alt="Foto Wilayah Perjuangan 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture3.png" alt="Foto Wilayah Perjuangan 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi2-content" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Wilayah awal perjuangan Raden Mas Said adalah Dusun Nglaroh di Desa Pule, Kecamatan Selogiri, Kabupaten Wonogiri, yang menjadi markas pertamanya setelah konflik di Kartasura. Di tempat ini, Raden Mas Said membentuk pasukan dari para pengikut setia dan menyusun strategi perang gerilya. Perjuangannya mendapat dukungan masyarakat Nglaroh dan tokoh lokal, Kyai Wiradiwangsa. Keberadaan Raden Mas Said di wilayah ini dibuktikan dengan peninggalan sejarah seperti Watu Gilang, Sendang Siwani, Sendang Sinangka, dan kompleks makam Matah Ati (Pambudi, 2018).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Beberapa desa di Sukoharjo menjadi jalur lintasan dan tempat persembunyian pasukan Raden Mas Said karena wilayah ini merupakan akses langsung dari Wonogiri menuju Surakarta (Ricklefs and Zara, 2021). Untuk mencapai Surakarta, pasukan harus menyeberangi Sungai Bengawan Solo yang lebar dan berarus deras, sehingga sungai ini menjadi benteng alami yang menghambat kejaran pasukan Belanda yang didukung Kasunanan. Selain Sukoharjo, wilayah Karanganyar seperti Wonorejo, Matesih, dan sekitarnya juga menjadi daerah penting sebagai tempat konsolidasi pasukan menjelang Perjanjian Salatiga (Ricklefs and Zara, 2021).</p>
+         <p class="leading-relaxed" style="text-align: justify;">Jumlah pasukan Raden Mas Said yang lebih sedikit membuat perjuangan dilakukan dengan strategi perang gerilya yang memanfaatkan kondisi alam. Hutan, pegunungan, dan aliran Sungai Bengawan Solo menjadi wilayah strategis untuk menyerang dan bersembunyi dari musuh. Daerah perlawanan yang didominasi hutan dan gunung inilah yang kemudian dikenal sebagai Wonogiri, yang berasal dari kata wono (hutan) dan giri (gunung) (Pemda Wonogiri, 1990). Semangat perjuangan tersebut diwujudkan dalam semboyan "Tiji Tibeh" yang berarti berjaya bersama dan berjuang bersama, nilai yang hingga kini selaras dengan slogan pembangunan Wonogiri, "Sesarengan Mbangun Wonogiri" (Pemda Wonogiri, 2022).</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi2-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 2. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=03373450" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-1')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 1</button> <button onclick="navigateTo('page-materi-3')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Materi 3 →</button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Simplified pages for Materi 3-8 -->
+   <section id="page-materi-3" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 3</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi3', 'video')" id="tab-materi3-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📹 Video</button> <button onclick="showTab('materi3', 'content')" id="tab-materi3-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi3', 'quiz')" id="tab-materi3-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi3-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">GELAR PANGERAN SAMBERNYAWA</h2>
+        <p class="text-[#3D2817]/70">Video Pembelajaran Materi 3</p>
+       </div>
+       <div class="bg-[#000000] border border-[#FF9644]/30 rounded-lg aspect-video overflow-hidden">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0Yf0OXWQ1kg?controls=1&loop=1&playlist=0Yf0OXWQ1kg" title="Video Materi 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+       </div>
+      </div>
+      <div id="content-materi3-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">JEJAK HISTORIS</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture4.png" alt="Jejak Historis 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture5.jpg" alt="Jejak Historis 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Jejak historis atau sumber sejarah adalah segala bentuk peninggalan yang menjadi bukti keberadaan dan aktivitas manusia di masa lalu. Di Wonogiri, jejak historis Raden Mas Said yang telah dibuktikan secara ilmiah antara lain Nglaroh, kompleks makam Matah Ati, Sendang Siwani, dan Sendang Sinongko. Peninggalan utama Raden Mas Said di Wonogiri adalah situs Nglaroh yang terletak di Desa Pule, Kecamatan Selogiri, Kabupaten Wonogiri. Nama Nglaroh berasal dari kata Ngelar Roh yang berarti memusatkan jiwa, sedangkan Desa Pule berasal dari kata kumpule yang bermakna tempat berkumpulnya para pengikut setia Raden Mas Said. Di kawasan ini terdapat petilasan Watu Gilang, yaitu batu datar dengan cekungan sesaji yang menjadi tempat awal Raden Mas Said membangun kekuatan militer untuk melawan penjajahan Belanda (Pambudi, 2018).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Secara geografis, Nglaroh terletak di daerah yang dikelilingi pegunungan dan Sungai Bengawan Solo sehingga aman dan strategis untuk kegiatan militer. Raden Mas Said memilih wilayah ini karena terlindung dari kejaran Belanda dan sangat mendukung strategi perang gerilya. Medan perbukitan dan kondisi alam di sekitar Selogiri memudahkan pasukan untuk bergerak, bersembunyi, dan melakukan serangan terhadap musuh yang jumlahnya lebih besar (Sudardi, 2022).</p>
+         <p class="leading-relaxed" style="text-align: justify;">Selain bernilai strategis, Nglaroh dan Watu Gilang juga memiliki nilai sejarah, budaya, dan spiritual bagi masyarakat Wonogiri. Situs ini dikelola oleh pemerintah daerah sebagai wisata sejarah dan dilestarikan bersama masyarakat setempat, dengan juru kunci bernama Yoko Hardiyanto. Watu Gilang sering dijadikan tempat ziarah, terutama pada malam Jumat Legi, serta menjadi bagian dari peringatan Hari Jadi Kabupaten Wonogiri. Melalui kegiatan ini, nilai perjuangan Raden Mas Said terus dikenalkan kepada generasi muda.</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi3-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 3. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=61471114" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-2')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 2</button> <button onclick="navigateTo('page-materi-4')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Materi 4 →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="page-materi-4" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 4</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi4', 'video')" id="tab-materi4-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📹 Video</button> <button onclick="showTab('materi4', 'content')" id="tab-materi4-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi4', 'quiz')" id="tab-materi4-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi4-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">PERJANJIAN SALATIGA 1757</h2>
+        <p class="text-[#3D2817]/70">Video Pembelajaran Materi 4</p>
+       </div>
+       <div class="bg-[#000000] border border-[#FF9644]/30 rounded-lg aspect-video overflow-hidden">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/i5hcDh0UVyo?controls=1&loop=1&playlist=i5hcDh0UVyo" title="Video Materi 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+       </div>
+      </div>
+      <div id="content-materi4-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">SENDANG SINANGKA</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="picture 6.jpg" alt="Sendang Sinangka 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="picture 7.jpg" alt="Sendang Sinangka 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Peninggalan keempat yaitu sendang Sinangka Berlokasi di Dusun Keloran, Kecamatan Selogiri, Kabupaten Wonogiri. Berjarak 5 km dari pusat kecamatan Selogiri. Sendang Sinangka berasal dari kata sendang (kolam) dan nangka (buah nangka). Sendang Sinangka merupakan salah satu tempat yang pernah dijadikan persinggahan oleh Raden Mas Said. Raden Mas Said sampai di tempat itu, beliau menemukan sebuah sendang atau telaga dan disampingnya ada buah nangka yang sudah masak. Buah nangka tersebut dimakan Raden Mas Said beserta pasukannya (Dwi Astuti, 2012).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Sendang Sinongko sampai sekarang dijadikan sebagai tempat yang dianggap keramat yang mempunyai kelebihan. Bagi masyarakat Wonogiri, kedua sendang tersebut tidak hanya memiliki nilai sejarah, tetapi juga nilai spiritual dan kultural. Warga setempat menganggap sendang sebagai tempat sakral, yang sering dikunjungi untuk keperluan ziarah, ritual budaya, dan spiritualitas lokal. Praktik ini memperkuat ikatan kolektif masyarakat dengan sejarah perjuangan masyarakat melawan ketidakadilan, sekaligus menjadi media transmisi nilai-nilai lokal dari generasi ke generasi (Pamenang and Pamardi, 2019).</p>
+         <p class="leading-relaxed" style="text-align: justify;">Sendang Sinongko dirawat oleh seorang juru kunci yang bernama Mbah Suratno. Mbah Suratno bertugas menjaga dan merawat Sendang Sinongko, memfasilitasi kegiatan ziarah, serta melestarikan tradisi dan nilai-nilai budaya yang berkaitan dengan sejarah lokal. Aktivitas mbah Suratno tidak langsung bernaung dibawah pemerintah daerah Wonogiri, namun dalam praktik pelestarian budaya lokal pemerintah daerah sering kali bekerja sama dengan tokoh masyarakat seperti juru kunci termasuk mbah Suratno dalam menjaga dan merawat situs-situs bersejarah.</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi4-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 4. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=57165194" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-3')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 3</button> <button onclick="navigateTo('page-materi-5')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Materi 5 →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="page-materi-5" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 5</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi5', 'video')" id="tab-materi5-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📷 Foto</button> <button onclick="showTab('materi5', 'content')" id="tab-materi5-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi5', 'quiz')" id="tab-materi5-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi5-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">FOTO</h2>
+        <p class="text-[#3D2817]/70">Dokumentasi Sendang Siwani</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture8.jpg" alt="Sendang Siwani 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture9.jpg" alt="Sendang Siwani 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi5-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">SENDANG SIWANI</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture8.jpg" alt="Sendang Siwani 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture9.jpg" alt="Sendang Siwani 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Peninggalan yang ketiga adalah sendang Siwani yang berada di desa Singodutan, kecamatan Selogiri. Tempat ini merupakan pusat pertahanan pasukan Raden Mas Said dari tahun 1752 sampai tahun 1757 melawan Kasunanan yang didukung Belanda (Sudardi, 2022). Raden Mas Said menggunakan taktik perang gerilya, dalam sebuah serangan mereka terdesak sehingga harus kembali bersembunyi. Dalam pelariannya ini pasukan Raden Mas Said menuju sendang untuk istirahat dan menyusun strategi serangan baru. Air sendang yang jernih digunakan untuk minum sehingga semangat perjuangan kembali pulih. Oleh karena itu disebut sebagai sendang siwani, sendang merupakan sumber air dan siwani berasal dari kata wani atau berani sehingga dapat diartikan sumber air pemberi keberanian (Dwi Astuti, 2012;disarpus.wonogirikab.go.id, 2025).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Sendang Siwani dalam cerita rakyat terkait dengan perjuangan Raden Mas Said merupakan tempat penggemblengan minta spiritual. Sendang Siwani berasal dari pemahaman Sendang yang memberikan keberanian. Secara filosofi sendang ini dipercaya dapat membangkitkan keberanian sebagai simbol keyakinan akan mendapatkan kemenangan setelah meminum air sendang. Keyakinan ini diilhami oleh sebuah cerita tentang seekor kebo dugul atau kerbau yang tidak bertanduk bertarung mati-matian melawan kerbau bule yang besar dan kuat. Namun demikian, kerbau tersebut bisa menang menghadapi kerbau bule yang kuat tersebut setelah meminum air Sendang Siwani. Cerita tersebut merupakan bentuk simbolik, kerbau dugul adalah simbol dari rakyat jelata yang lemah sementara kerbau bule yang besar dan memiliki tanduk lebar adalah simbol dari pemerintah Belanda yang kuat. Namun Raden Mas Said berhasil meyakinkan bahwa penduduk Jawa memiliki kekuatan yang dapat mengalahkan orang-orang Belanda (Sudardi, 2022).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Sendang Siwani digunakan Raden Mas Said dan prajuritnya untuk beristirahat dan minum air sendang tersebut. Setelah minum air, Raden Mas Said beserta prajuritnya mendapat kekuatan, keberanian sehingga bisa memenangkan pertempuran melawan Belanda. Sampai sekarang Sendang Siwani banyak didatangi para peziarah yang ingin melakukan tirakat. Sendang Siwani ramai didatangi para peziarah dari Wonogiri maupun dari luar Wonogiri terutama malam tanggal 1 Muharam/Suro (Kalender Islam/ Hijriyah) (Dwi Astuti 2012; Pambudi, 2018).</p>
+         <p class="leading-relaxed" style="text-align: justify;">Petilasan ini dikelola oleh sebuah perkumpulan yang bernama Perkumpulan Sendang Siwani Wonogiri. Keberadaan Sendang Siwani cukup terawat dan dijaga oleh seorang juru kunci sekaligus pengurus perkumpulan Sendang Siwani Wonogiri yang bernama Slamet Riyadi. Keberadaan perkumpulan ini berada dibawah naungan dinas Pendidikan dan Kebudayaan Kabupaten Wonogiri. Perkumpulan Sendang Siwani Wonogiri bertugas melestarikan warisan sejarah, seni budaya lokal dan spiritual melalui aktivitas dokumentasi situs bersejarah, edukasi publik, serta pengembangan wisata budaya berbasis partisipasi masyarakat.</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi5-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 5. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=40207754" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-4')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 4</button> <button onclick="navigateTo('page-materi-6')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Materi 6 →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="page-materi-6" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 6</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi6', 'video')" id="tab-materi6-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📷 Foto</button> <button onclick="showTab('materi6', 'content')" id="tab-materi6-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi6', 'quiz')" id="tab-materi6-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi6-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">FOTO</h2>
+        <p class="text-[#3D2817]/70">Dokumentasi Kompleks Makam Matah Ati</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture10.png" alt="Kompleks Makam Matah Ati 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture11.jpg" alt="Kompleks Makam Matah Ati 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi6-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">KOMPLEKS MAKAM MATAH ATI</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture10.png" alt="Kompleks Makam Matah Ati 1" class="w-full h-80 object-cover"/>
+        </div>
+        <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+         <img src="Picture11.jpg" alt="Kompleks Makam Matah Ati 2" class="w-full h-80 object-cover"/>
+        </div>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Peninggalan kedua yaitu komplek makam Matah Ati. Makam Matah Ati terletak di dusun Gunung Wijil, kecamatan Selogiri, kabupaten Wonogiri. Secara geografis, makam ini terletak di bukit kecil yang disebut sebagai Gunung Wijil. Gunung Wijil dikelilingi persawahan di barat dan utara serta pemukiman penduduk di timur. Di dalam komplek makam tersebut terdapat satu area yang dianggap istimewa. Area ini terdapat bangunan klasik khas keraton dengan dominasi cat warna hijau, letaknya berada di puncak bukit dan dikelilingi oleh pagar tembok. Tempat ini merupakan lokasi pemakaman salah satu keluarga Praja Mangkunegaran yaitu Rubiyah dan beberapa pengikut setianya. Rubiyah adalah salah satu istri Raden Mas Said yang bergelar Bendara Raden Ayu Matah Ati. Rubiyah berperan penting dalam memobilisasi pasukan gerilya, khususnya perempuan, yang membantu Raden Mas Said dalam berbagai pertempuran (Pambudi, 2018 ; Dwi Astuti 2012).</p>
+         <p class="leading-relaxed" style="text-align: justify;">Komplek makam Matah Ati menjadi bagian penting dari narasi lokal yang menonjolkan kontribusi perempuan dalam sejarah perjuangan di Jawa. Tempat ini sering menjadi lokasi ziarah budaya dan spiritual, di mana upacara adat dan kegiatan penghormatan dilaksanakan oleh masyarakat setempat. Pemerintah daerah bersama masyarakat berupaya menjaga kelestariannya agar tetap dapat dinikmati oleh generasi mendatang, sekaligus menjadi pengingat tentang peran vital perempuan seperti Rubiyah dalam sejarah perlawanan bangsa terhadap kolonialisme (Dwi Astuti, 2012;Pambudi 2018). Komplek makam ini cukup terawat, dijaga oleh seorang abdi dalem dari Pura Mangkunegaran yang bernama Rukiman. Tugas juru kunci ini adalah merawat keberadaan makam serta melayani para peziarah yang berkunjung.</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi6-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 6. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=52757898" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-5')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 5</button> <button onclick="navigateTo('page-materi-7')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Materi 7 →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="page-materi-7" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Materi 7</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="flex gap-2 mb-8 border-b border-[#FF9644]/30"><button onclick="showTab('materi7', 'video')" id="tab-materi7-video" class="px-6 py-3 text-[#3D2817] border-b-2 border-[#FF9644] font-semibold">📷 Foto</button> <button onclick="showTab('materi7', 'content')" id="tab-materi7-content" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">📖 Materi</button> <button onclick="showTab('materi7', 'quiz')" id="tab-materi7-quiz" class="px-6 py-3 text-[#3D2817]/60 hover:text-[#3D2817] border-b-2 border-transparent">✍️ Latihan</button>
+      </div>
+      <div id="content-materi7-video" class="tab-content">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">FOTO</h2>
+        <p class="text-[#3D2817]/70">Identitas Kabupaten Wonogiri</p>
+       </div>
+       <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden">
+        <img src="foto identitas.jpg" alt="Identitas Kabupaten Wonogiri" class="w-full h-auto object-contain"/>
+       </div>
+      </div>
+      <div id="content-materi7-content" class="tab-content hidden">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">IDENTITAS WONOGIRI</h2>
+        <div class="ornament-line w-48 mx-auto"></div>
+       </div>
+       <div class="bg-[#F0E6D2] border border-[#FF9644]/30 rounded-lg overflow-hidden mb-8">
+        <img src="foto identitas.jpg" alt="Identitas Kabupaten Wonogiri" class="w-full h-auto object-contain"/>
+       </div>
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Jejak historis seperti situs Nglaroh, komplek makam Raden Ayu Matah Ati, Sendang Siwani, dan Sendang Sinangka memiliki peran penting dalam membentuk identitas politik bagi masyarakat maupun pemerintahan di Wonogiri. Dusun Nglaroh memiliki makna historis yang mendalam karena menjadi tempat awal Raden Mas Said membangun kekuatan militer dan politik untuk melawan Belanda yang didukung Kasunan (Pambudi, 2018). Peristiwa itu terjadi pada hari Rabu Kliwon tanggal 3 Rabiulawal (Mulud) tahun Jumakir windu Sengoro, dengan candra sengkala Angrasa Retu Ngoyag Jagad atau tahun 1666 dalam kalender Jawa. Dalam perhitungan kalender Masehi bertepatan dengan hari Rabu Kliwon tanggal 19 Mei 1741 M (disarpus.wonogirikab.go.id 2025).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Tahun 1741 dilambangkan dengan surya sengkala Kahutaman Sumbering Giri Linuwih (Julijanto and Sholakhuddin, 2022). Secara etimologis kahutaman diartikan sebagai keberanian; Sumbering berarti sumber kekuatan; Giri berarti Gunung/Wonogiri; sedangkan Linuwih : memiliki kelebihan. Secara filosofis sengkalat tersebut mengandung makna "Dengan keberanian atas dasar keluhuran budi, tekad dan semangat, segala tujuan luhur akan tercapai". (disarpus.wonogirikab.go.id 2025).</p>
+         <p class="mb-4 leading-relaxed" style="text-align: justify;">Dukungan rakyat Nglaroh terhadap perjuangan Raden Mas Said dipimpin oleh tokoh setempat yang bernama oleh Kyai Wiradiwangsa. Dari situlah awal mula suatu bentuk pemerintahan yang nantinya menjadi cikal bakal Kabupaten Wonogiri (Pambudi, 2018). Mengambil momentum tanggal 19 Mei 1741 M, ketika Raden Mas Said membentuk sebuah awal pemerintahan di Nglaroh dianggap sebagai cikal bakal Kabupaten Wonogiri, maka Pemerintah Kabupaten Wonogiri menetapkan Peraturan Daerah (Perda) Nomor 5 Tahun 1990 tentang Hari Jadi Kabupaten Daerah Tingkat II Wonogiri (disarpus.wonogirikab.go.id 2025;Pemda Wonogiri, 1990). Setiap tanggal 19 Mei pemerintah kabupaten Wonogiri menggelar serangkaian upacara dan kegiatan dalam rangka memeriahkan peringatan Hari Jadi, dan sekaligus sebagai sarana mempromosikan potensi wisata budaya yang ada di Kabupaten Wonogiri.</p>
+        </div>
+       </div>
+      </div>
+      <div id="content-materi7-quiz" class="tab-content hidden">
+       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+        <div class="text-center">
+         <p class="text-[#3D2817]/80 mb-6 leading-relaxed">Klik tombol di bawah untuk mengerjakan latihan soal Materi 7. Anda akan diarahkan ke platform pembelajaran interaktif kami.</p>
+         <a href="https://wayground.com/join?gc=17384842" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-4 bg-[#FF9644] text-[#3D2817] rounded-lg font-semibold hover:bg-[#FFCE99] transition-colors">
+          🚀 Mulai Pengerjaan Soal
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-6')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 6</button> <button onclick="navigateTo('page-kesimpulan')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Kesimpulan →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Page: Kesimpulan -->
+   <section id="page-kesimpulan" class="page min-h-full w-full hidden relative kawung-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu-materi')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Kesimpulan</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="text-center mb-12">
+       <h2 class="text-4xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">KESIMPULAN</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+       <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif;">
+        <p class="mb-4 leading-relaxed" style="text-align: justify;">Wilayah Wonogiri, khususnya Kecamatan Selogiri, menyimpan berbagai jejak historis perjuangan Raden Mas Said, seperti situs Nglaroh di Desa Pule yang menjadi tempat awal penyusunan strategi perlawanan terhadap Kasunanan dan Belanda. Selain Nglaroh, terdapat kompleks makam Raden Ayu Matah Ati di Dusun Gunung Wijil, Sendang Siwani di Desa Singodutan sebagai basis pertahanan, serta Sendang Sinongko di Dusun Keloran yang berfungsi sebagai sumber air tersembunyi bagi pasukan. Keempat situs ini menjadi saksi perjuangan Raden Mas Said selama sekitar 16 tahun, termasuk peristiwa penting pada 19 Mei 1741 yang kemudian dijadikan dasar penetapan Hari Jadi Kabupaten Wonogiri melalui Peraturan Daerah Nomor 5 Tahun 1990. Hingga kini, situs-situs tersebut dipandang sakral dan sering dijadikan tempat ziarah pada waktu-waktu tertentu.</p>
+        <p class="leading-relaxed" style="text-align: justify;">Jejak sejarah Raden Mas Said tidak hanya terlihat pada peninggalan fisik, tetapi juga tercermin dalam nilai spiritualitas, solidaritas, dan semangat pengorbanan masyarakat Wonogiri. Warisan ini hidup dalam tradisi, ritual, dan ingatan kolektif masyarakat, yang menunjukkan peran Raden Mas Said sebagai tokoh pemersatu. Oleh karena itu, pelestarian peninggalan sejarah ini perlu dilakukan melalui konservasi situs serta pemanfaatan edukatif dan budaya, sehingga selain memperkuat identitas lokal, juga membuka peluang pengembangan wisata sejarah dan ekonomi kreatif masyarakat.</p>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-materi-7')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Materi 7</button> <button onclick="navigateTo('page-menu')" class="px-6 py-3 bg-[#FF9644] text-[#3D2817] rounded hover:bg-[#FFCE99] transition-colors font-semibold">Selesai →</button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Page: Daftar Pustaka -->
+   <section id="page-pustaka" class="page min-h-full w-full hidden relative batik-pattern">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFFDF1] via-[#F0E6D2] to-[#FFFDF1]"></div>
+    <div class="relative z-10 min-h-full">
+     <header class="bg-[#FFFDF1]/90 backdrop-blur-sm border-b border-[#FF9644]/30 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><button onclick="navigateTo('page-menu')" class="flex items-center gap-2 text-[#3D2817]/70 hover:text-[#3D2817] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg><span>Kembali</span> </button>
+       <h1 class="text-xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">Daftar Pustaka</h1>
+       <div class="w-20"></div>
+      </div>
+     </header>
+     <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="text-center mb-12">
+       <h2 class="text-4xl font-bold text-[#3D2817] mb-2" style="font-family: 'Cinzel', serif;">DAFTAR PUSTAKA</h2>
+       <div class="ornament-line w-48 mx-auto"></div>
+      </div>
+      <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8">
+       <div class="prose text-[#3D2817]/90" style="font-family: 'Crimson Text', serif; font-size: 0.95rem;">
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Anjani, A. M., Yunianto, T., & Purwanta, H. (2023). Peran prajurit estri Mangkunegaran pada masa K.G.P.A.A. Mangkunegara I (1742-1795). <em>Jurnal Sejarah</em>, 23(1), 27–44.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Astuti, D. (2012). Folklor Sambernyawa di Wonogiri sebagai materi pengayaan pembelajaran sejarah. <em>Jurnal Pendidikan Sejarah</em>.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Disarpus Wonogiri. (2025). Sejarah Kabupaten Wonogiri. Retrieved from https://wonogirikab.go.id/profile/sejarah-kab-wonogiri/</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Hendro, E. P. (2017). Strategi kebudayaan perjuangan pahlawan nasional Pangeran Sambernyowo. <em>Endogami: Jurnal Ilmiah Kajian Antropologi</em>, 1(1), 42. https://doi.org/10.14710/endogami.1.1.42-54</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Julijanto, M., & Sholakhuddin, B. (2022). Gerakan ekonomi Syariah dalam membangun kerukunan umat beragama berbasis masyarakat. In <em>Prosiding Seminar Nasional</em> (pp. 165–181).</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Pambudi, I. G. (2018). Dusun Nglaroh, Wonogiri: Basis perjuangan politik Raden Mas Said 1742-1757. <em>Jurnal Sejarah dan Budaya</em>, 12(2), 200–210.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Pamenang, N. W., & Pamardi, S. (2019). Sendhang Sinangka sebagai sumber inspirasi terciptanya ide karya seni. <em>Greget</em>, 16(1), 36–45. https://doi.org/10.33153/grt.v16i1.2353</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Pemda Wonogiri. (1990). <em>Perda No. 5 Tahun 1990 tentang Hari Jadi Kabupaten Wonogiri</em>. Wonogiri: Pemerintah Daerah Wonogiri.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Pemda Wonogiri. (2022). <em>Rencana pembangunan industri Kabupaten Wonogiri Tahun 2022-2042</em> (Vol. 9). Wonogiri: Pemerintah Daerah Wonogiri.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Pringgodigdo, A. K. (1950). <em>Geschiedenis der ondernemingen van het Mangkunagorosche Rijk</em>. 's-Gravenhage: Martinus Nijhoff.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Ricklefs, M. C. (1974). <em>Jogjakarta under Sultan Mangkubumi 1749-1792: A history of the division of Java</em>. London: Oxford University Press.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Ricklefs, M. C., & Zara, M. Y. (2021). <em>Sumber nyawa: Kisah perjuangan seorang pahlawan nasional Indonesia, Pangeran Mangkunagara I (1726-1795)</em>. Jakarta: Penerbit Buku Kompas.</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Sudardi, B. (2022). Konsep kepemimpinan Raden Mas Sahid dan aplikasinya di zaman modern. <em>Social, Humanities, and Educational Studies (SHEs): Conference Series</em>, 5(1), 82. https://doi.org/10.20961/shes.v5i1.57776</p>
+        <p class="mb-3 leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Sujarwo, J., Aini, N. F., & Susanto, D. (2023). Representasi Amangkurat I dalam Babad Tanah Jawi terjemahan W. L. Olthof dan novel Amangkurat karya Ardian Kresna. <em>Sutasoma: Jurnal Sastra Jawa</em>, 11(2), 161–78. https://doi.org/10.15294/sutasoma.v11i2.70795</p>
+        <p class="leading-relaxed" style="text-align: justify; margin-left: 40px; text-indent: -40px;">Wasino. (2012). Modernisasi pemerintahan Praja Mangkunagaran Surakarta. <em>Paramita: Historical Studies Journal</em>, 22(1), 1–15.</p>
+       </div>
+      </div>
+      <div class="flex justify-between mt-8"><button onclick="navigateTo('page-menu')" class="px-6 py-3 border border-[#FF9644]/50 text-[#3D2817] rounded hover:bg-[#FF9644]/10 transition-colors">← Menu Utama</button>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ca227e0679e4ad7',t:'MTc3MDQ1OTYzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
